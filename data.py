@@ -5,6 +5,20 @@ conn = sqlite3.connect('url_short.db')
 short_url_db = "SHORT_URL"
 
 
+def override_database():
+    """
+    This method is used to override the database for testing purposes
+    """
+    conn = sqlite3.connect('url_short_test.db')
+    conn.execute("DROP TABLE IF EXISTS " + short_url_db)
+    create_table()
+
+
+def close_connection_after_drop():
+    conn.execute("DROP TABLE IF EXISTS " + short_url_db)
+    conn.close()
+
+
 def create_table():
     sql = "CREATE TABLE IF NOT EXISTS " + short_url_db + "(" \
                                                          "ID INTEGER PRIMARY KEY AUTOINCREMENT," \
