@@ -1,8 +1,8 @@
-from input import Command
-from data import *
-import random
+import  random
+from enum import Enum
+from code.input import Command
+from code.data import insert_short_url, get_long_url, create_table
 import logging
-
 base_url = "www.developp.in/"
 
 
@@ -22,9 +22,11 @@ def process(inputs):
         case Command.EXPAND:
             result_url = get_long_url(inputs.url)
         case Command.SHORTEN:
+            print("Shortening URL: " + inputs.url)
             result_url = get_short_url(inputs.url)
         case Command.INITIALIZE:
             create_table()
+    print("Result URL: " + str(result_url))
     return result_url
 
 

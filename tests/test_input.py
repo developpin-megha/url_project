@@ -1,4 +1,4 @@
-from python_url_project.code.input import check_url_regex
+from code.input import check_url_regex
 
 
 def test_check_url_regex():

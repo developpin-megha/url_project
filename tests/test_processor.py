@@ -1,7 +1,8 @@
 import unittest
 
-from input import *
-from processor import *
+from code.input import *
+from code.processor import *
+from code.data import *
 
 logging.basicConfig(level=logging.DEBUG)
 

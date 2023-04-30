@@ -1,7 +1,7 @@
 import sqlite3
 import logging
 
-conn = sqlite3.connect('url_short.db')
+conn = sqlite3.connect('url_short.db', check_same_thread=False)
 short_url_db = "SHORT_URL"
 
 
