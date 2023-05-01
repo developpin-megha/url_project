@@ -1,6 +1,6 @@
 import argparse
-from processor import process
-from input import Input
+from code.processor import process
+from code.input import Input
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
